@@ -10,7 +10,7 @@ import { myThemes } from './assets/themes/defaultThemes';
 ReactDOM.render(
   <RecoilRoot>
     <ThemeProvider theme={myThemes}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
     </ThemeProvider>

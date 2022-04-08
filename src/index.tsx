@@ -1,14 +1,21 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import './index.scss';
+import { myThemes } from './assets/themes/defaultThemes';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <RecoilRoot>
+    <ThemeProvider theme={myThemes}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
+  </RecoilRoot>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

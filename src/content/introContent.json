@@ -1,0 +1,23 @@
+{
+  "title": "Get paid for saving your own money",
+  "text": "We understand that saving money could be tricky, yet fulfilling; Lets help make it fun ",
+  "button": [
+    {
+      "title": "Start saving",
+      "icon":"delivery-man.svg",
+      "className":"icons-svg",
+      "iconClass":"primary",
+      "svgIcon":"DELIVERY_MAN",
+      "textColor":""
+    },
+    {
+      "title": "Explore ",
+      "color": "#fff",
+      "icon":"delivery-man.svg",
+      "className":"icons-svg",
+      "iconClass":"primary",
+      "svgIcon":"EXPLORE",
+      "textColor":"primaryColor"
+    }
+  ]
+}

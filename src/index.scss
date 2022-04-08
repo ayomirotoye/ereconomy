@@ -1,0 +1,96 @@
+@import "./custom.scss";
+@import "./assets/styles/css/marginUtilities.scss";
+
+body{
+  font-family: 'DM Sans', sans-serif;
+  font-family: 'Merriweather', serif;
+  color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.18;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+
+.info-card-svg{
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+}
+
+.icons-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.icons-svg-sm {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.icon-svg-margin-top {
+  fill: "#ffffff";
+  margin-top: "10px";
+  margin-left: "5px";
+}
+
+svg path {
+  fill: "white";
+  stroke: "white";
+  stroke-width: "10";
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--primary-color);
+}
+
+// .btn-primary:focus {
+//   background-color: var(--primary-color) !important;
+//   color: #ffffff;
+// }
+
+// .btn-primary:hover {
+//   background-color: var(--primary-color) !important;
+//   color: #ffffff;
+// }
+
+// .btn-primary:disabled {
+//   background-color: var(--primary-color) !important;
+//   color: #ffffff;
+// }
+
+.bordered-div {
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+}
+
+// /* BUTTONS */
+// .btn-primary,
+// .btn-primary:hover {
+//   height: 48px;
+//   background-color: var(--primary-color);
+//   color: #ffffff;
+//   font-weight: 300;
+//   font-size: 16px;
+//   border-color: var(--primary-color);
+// }
+/* BUTTONS */
+/* LABELS */
+label {
+  font-weight: 700;
+}
+
+.text-primary{
+  color: var(--secondary-color) !important;
+}

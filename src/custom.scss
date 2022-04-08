@@ -1,0 +1,20 @@
+/* The following block can be included in a custom.scss */
+
+/* make the customizations */
+/* === Import Bootstrap functions and variables === */
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+
+:root {
+  --primary-color: #49926A;
+  --secondary-color: #2e186a;
+}
+
+$custom-colors: (
+  "primary": #49926A,
+  "secondary": #2e186a);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+/* import bootstrap to set changes */
+@import '~bootstrap/scss/bootstrap.scss';

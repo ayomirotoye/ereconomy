@@ -1,23 +1,26 @@
-import  { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { LoginIcon } from "../../assets/icons/LoginIcon";
-import { validateLoginInput } from "../../utils/formUtils";
-import FormGroup from "../formGroup";
-import { callUserLoginApi } from "../../services/authService";
-import { isSuccessful } from "../../utils/helpers";
-import { toast } from 'react-toastify';
-import { responseCodes } from "../../static/constants";
+import { useEffect, useState } from "react";
+import {  Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { appNavigationLinks } from "../../utils/appNavigationLinks";
+import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
+import {  ResponsiveWidthWrapper } from "../../assets/styles/breakPointUtilities";
+import { StyledButton } from "../../assets/styles/common";
+import { callUserLoginApi } from "../../services/authService";
 import { atomLoginModalState } from "../../state/atoms/modalState";
+import { responseCodes } from "../../static/constants";
+import { appNavigationLinks } from "../../utils/appNavigationLinks";
+import { validateLoginInput } from "../../utils/formUtils";
+import { isSuccessful } from "../../utils/helpers";
+import Brand from "../brand";
+import FormGroup from "../formGroup";
 
 const LoginModal = ({ header_value }: any) => {
   const [loginModalState, setLoginModalState] = useRecoilState(atomLoginModalState);
 
-  const navigate  = useNavigate();
+  const navigate = useNavigate();
 
   const [values, setValues] = useState(Object.assign({}));
+  const [fullscreen] = useState<boolean>(true);
 
   const closeAuthModal = () => {
     setLoginModalState({ isOpen: false });
@@ -71,79 +74,74 @@ const LoginModal = ({ header_value }: any) => {
   return (
     <Modal
       centered
-      title={header_value ?? "Login"}
+      keyboard={true}
       show={loginModalState.isOpen}
-      destroyOnClose={true}
-      confirmLoading={false}
-      onCancel={closeAuthModal}
-      footer={[
-        <Button
-          className="btn-primary"
-          key="Login"
-          disabled={isSubmitting}
-          // icon={
-          //   isSubmitting ? (
-          //     <Spin size={"small"} className="ant-spin-dot-item-primary" />
-          //   ) : (
-          //     <LoginIcon iconClass="secondary" className="icons-svg" />
-          //   )
-          // }
-          onClick={handleAuth}
-        >
-          Login
-        </Button>,
-      ]}
+      onHide={closeAuthModal}
+      fullscreen={true}
     >
-      <div>
-        <form>
-          <div className="row">
-            <div className="col-sm-12 col-md-12 mb-3">
-              <FormGroup
-                input_name="email"
-                label_value="Email"
-                input_type="email"
-                input_id="email"
-                is_readonly={false}
-                on_change={handleInputChange}
-                input_value={values?.email ?? ""}
-                error={{
-                  hasError: myErrors.email,
-                  message: myErrors.email,
-                }}
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-12 col-md-12">
-              <FormGroup
-                input_name="password"
-                label_value="Password"
-                input_type="password"
-                input_id="password"
-                is_readonly={false}
-                on_change={handleInputChange}
-                input_value={values?.password ?? ""}
-                error={{
-                  hasError: myErrors.password,
-                  message: myErrors.password,
-                }}
-              />
-            </div>
-          </div>
-        </form>
-        <div className="d-flex justify-content-center align-items-center">
-          <Button
-            // type="link"
-            onClick={(e: any) => {
-
-            }}
-          >
-            <p className="m-0">
-              First timer? <b>Click here</b>
-            </p>
-          </Button>
+      <ResponsiveWidthWrapper className="mx-auto">
+        <div className="d-flex justify-content-end">
+          <Brand />
         </div>
-      </div>
+        <Modal.Header closeButton>
+          <Modal.Title >
+            {header_value ?? "Login"}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="">
+            <form>
+              <div className="row">
+                <div className="col-sm-12 col-md-12 mb-5">
+                  <FormGroup
+                    input_name="email"
+                    label_value="Email"
+                    input_type="email"
+                    input_id="email"
+                    is_readonly={false}
+                    on_change={handleInputChange}
+                    input_value={values?.email ?? ""}
+                    error={{
+                      hasError: myErrors.email,
+                      message: myErrors.email,
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-sm-12 col-md-12 mb-5">
+                  <FormGroup
+                    input_name="password"
+                    label_value="Password"
+                    input_type="password"
+                    input_id="password"
+                    is_readonly={false}
+                    on_change={handleInputChange}
+                    input_value={values?.password ?? ""}
+                    error={{
+                      hasError: myErrors.password,
+                      message: myErrors.password,
+                    }}
+                  />
+                </div>
+              </div>
+            </form>
+            <div className="d-flex justify-content-center align-items-center">
+              <StyledButton
+                width="50%"
+                onClick={(e: any) => {
+
+                }}
+              >
+                Login
+              </StyledButton>
+            </div>
+            <div className="d-flex justify-content-center align-items-center">
+              <p>Forgot password</p>
+            </div>
+          </div>
+        </Modal.Body>
+      </ResponsiveWidthWrapper>
     </Modal>
   );
 };

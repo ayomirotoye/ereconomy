@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import {  Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { useRecoilState } from "recoil";
-import {  ResponsiveWidthWrapper } from "../../assets/styles/breakPointUtilities";
+import { ResponsiveWidthWrapper } from "../../assets/styles/breakPointUtilities";
 import { StyledButton } from "../../assets/styles/common";
+import { Content } from "../../assets/styles/contentBlock";
+import { StyledLink } from "../../assets/styles/styledUtilities";
 import { callUserLoginApi } from "../../services/authService";
 import { atomLoginModalState } from "../../state/atoms/modalState";
 import { responseCodes } from "../../static/constants";
@@ -109,7 +112,7 @@ const LoginModal = ({ header_value }: any) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-12 col-md-12 mb-5">
+                <div className="col-sm-12 col-md-12">
                   <FormGroup
                     input_name="password"
                     label_value="Password"
@@ -126,7 +129,10 @@ const LoginModal = ({ header_value }: any) => {
                 </div>
               </div>
             </form>
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="">
+                <StyledLink to="/register">New here ? Register</StyledLink>
+              </div>
               <StyledButton
                 width="50%"
                 onClick={(e: any) => {
@@ -137,7 +143,7 @@ const LoginModal = ({ header_value }: any) => {
               </StyledButton>
             </div>
             <div className="d-flex justify-content-center align-items-center">
-              <p>Forgot password</p>
+              <Content>Forgot password ?</Content>
             </div>
           </div>
         </Modal.Body>

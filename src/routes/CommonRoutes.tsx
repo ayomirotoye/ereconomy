@@ -1,11 +1,17 @@
-import { Routes, Route } from "react-router";
-import Home from "../pages/home";
+import { lazy, Suspense } from "react";
+import { Route, Routes } from 'react-router-dom';
+
+const Home = lazy(() => import("../pages/home"));
+const Register = lazy(() => import("../pages/register/register"));
 
 const CommonRoutes = () => {
     return (
-        <Routes>
-            <Route index element={<Home />} />
-        </Routes>
+        <Suspense fallback={<>Loading</>}>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/register" element={<Register/>}/>
+            </Routes>
+        </Suspense>
     )
 }
 

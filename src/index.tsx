@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
@@ -7,15 +7,16 @@ import { ThemeProvider } from 'styled-components';
 import './index.scss';
 import { myThemes } from './assets/themes/defaultThemes';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root") as unknown as HTMLElement);
+
+root.render(
   <RecoilRoot>
     <ThemeProvider theme={myThemes}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
     </ThemeProvider>
-  </RecoilRoot>,
-  document.getElementById("root")
+  </RecoilRoot>
 );
 
 // If you want to start measuring performance in your app, pass a function

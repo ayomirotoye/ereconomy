@@ -66,9 +66,28 @@ svg path {
 /* BUTTONS */
 /* LABELS */
 label {
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 22px;
 }
 
 .text-primary{
   color: var(--secondary-color) !important;
+}
+
+.progress-bar{
+  background-color: var(--accent-color) !important;
+}
+
+.progress{
+  height: 0.25rem !important;
+}
+
+.short-input {
+  padding: 12px 16px;
+  height: 48px;
+  background: #ffffff;
+  border: 3px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 8px;
 }

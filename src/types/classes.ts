@@ -20,3 +20,11 @@ export type ResponseBody = {
     message?: string;
     hasError?: boolean;
 };
+
+export type ProgressBarProps = {
+    id?: string;
+    now?: number;
+    children?: any;
+    title?: string;
+    className?: string
+}

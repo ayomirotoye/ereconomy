@@ -1,5 +1,9 @@
 import { responseCodes } from "../static/constants";
 
+
+export const isNumeric = (num: any) => (typeof (num) === 'number' ||
+  (typeof (num) === "string" && num.trim() !== '')) && !isNaN(num as number);
+
 export const isObject = (item: any) => {
   return typeof item === "object" && !Array.isArray(item) && item !== null;
 };

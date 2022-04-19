@@ -5,9 +5,7 @@ import LoginModal from "../components/modals/loginModal";
 import RegisterModal from "../components/modals/registerModal";
 import {
     CustomNavLinkSmall,
-    HeaderSection,
 } from "../assets/styles/header";
-import { Button } from "react-bootstrap";
 import { atomLoginState } from "../state/atoms/authState/userLogin";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { atomLoginModalState } from "../state/atoms/modalState";
@@ -16,14 +14,6 @@ import { LoginIcon } from "../assets/icons/LoginIcon";
 
 const Header = ({ t, isVisible = true }: any) => {
     const [visible, setVisibility] = useState(false);
-
-    const showDrawer = () => {
-        setVisibility(!visible);
-    };
-
-    const onClose = () => {
-        setVisibility(!visible);
-    };
 
     const MenuItem = () => {
         const loginState = useRecoilValue(atomLoginState);

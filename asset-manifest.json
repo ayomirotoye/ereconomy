@@ -1,15 +1,31 @@
 {
   "files": {
-    "main.css": "/ereconomy/static/css/main.64e80ea2.css",
-    "main.js": "/ereconomy/static/js/main.33719440.js",
-    "static/js/787.c35f7a78.chunk.js": "/ereconomy/static/js/787.c35f7a78.chunk.js",
-    "index.html": "/ereconomy/index.html",
-    "main.64e80ea2.css.map": "/ereconomy/static/css/main.64e80ea2.css.map",
-    "main.33719440.js.map": "/ereconomy/static/js/main.33719440.js.map",
-    "787.c35f7a78.chunk.js.map": "/ereconomy/static/js/787.c35f7a78.chunk.js.map"
+    "main.css": "https://ayomirotoye.github.io/ereconomy/static/css/main.81018a4e.css",
+    "main.js": "https://ayomirotoye.github.io/ereconomy/static/js/main.c9e4549b.js",
+    "static/js/555.089ae9e6.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/555.089ae9e6.chunk.js",
+    "static/js/270.d21037df.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/270.d21037df.chunk.js",
+    "static/js/935.4f4d2725.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/935.4f4d2725.chunk.js",
+    "static/js/787.c35f7a78.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/787.c35f7a78.chunk.js",
+    "static/js/736.f7accf90.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/736.f7accf90.chunk.js",
+    "static/js/692.b79c41f0.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/692.b79c41f0.chunk.js",
+    "static/js/404.0fe0ba4e.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/404.0fe0ba4e.chunk.js",
+    "static/js/27.481e35f4.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/27.481e35f4.chunk.js",
+    "static/js/841.9af17caa.chunk.js": "https://ayomirotoye.github.io/ereconomy/static/js/841.9af17caa.chunk.js",
+    "index.html": "https://ayomirotoye.github.io/ereconomy/index.html",
+    "main.81018a4e.css.map": "https://ayomirotoye.github.io/ereconomy/static/css/main.81018a4e.css.map",
+    "main.c9e4549b.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/main.c9e4549b.js.map",
+    "555.089ae9e6.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/555.089ae9e6.chunk.js.map",
+    "270.d21037df.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/270.d21037df.chunk.js.map",
+    "935.4f4d2725.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/935.4f4d2725.chunk.js.map",
+    "787.c35f7a78.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/787.c35f7a78.chunk.js.map",
+    "736.f7accf90.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/736.f7accf90.chunk.js.map",
+    "692.b79c41f0.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/692.b79c41f0.chunk.js.map",
+    "404.0fe0ba4e.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/404.0fe0ba4e.chunk.js.map",
+    "27.481e35f4.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/27.481e35f4.chunk.js.map",
+    "841.9af17caa.chunk.js.map": "https://ayomirotoye.github.io/ereconomy/static/js/841.9af17caa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.64e80ea2.css",
-    "static/js/main.33719440.js"
+    "static/css/main.81018a4e.css",
+    "static/js/main.c9e4549b.js"
   ]
 }

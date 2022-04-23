@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import Brand from "../components/brand";
 import LoginModal from "../components/modals/loginModal";
@@ -12,16 +11,10 @@ import { atomLoginModalState } from "../state/atoms/modalState";
 import { StyledButton } from "../assets/styles/common";
 import { LoginIcon } from "../assets/icons/LoginIcon";
 
-const Header = ({ t, isVisible = true }: any) => {
-    const [visible, setVisibility] = useState(false);
-
+const Header = ({ isVisible = true }: any) => {
     const MenuItem = () => {
         const loginState = useRecoilValue(atomLoginState);
         const [loginModalState, setLoginModalState] = useRecoilState(atomLoginModalState);
-        // const isLoggedIn = useSelector(
-        //   (state: any) => state.authReducer.isUserLoggedIn
-        // );
-
         const checkIfUserIsLoggedIn = () => {
             if (!loginState.isLoggedIn) {
                 console.log("User:::", loginState)
@@ -53,17 +46,17 @@ const Header = ({ t, isVisible = true }: any) => {
                 <Navbar bg="white" expand={"sm"} fixed="top">
                     <Container>
                         <Navbar.Brand href="#"><Brand /></Navbar.Brand>
-                        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+                        <Navbar.Toggle aria-controls="appNavbar" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <MenuItem />
                         </Navbar.Collapse>
                         <Navbar.Offcanvas
-                            id="offcanvasNavbar"
-                            aria-labelledby="offcanvasNavbarLabel"
+                            id="appNavbar"
+                            aria-labelledby="appNavbarLabel"
                             placement="end"
                         >
                             <Offcanvas.Header closeButton>
-                                <Offcanvas.Title id="offcanvasNavbarLabel"><Brand /></Offcanvas.Title>
+                                <Offcanvas.Title id="appNavbarLabel"><Brand /></Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <MenuItem />

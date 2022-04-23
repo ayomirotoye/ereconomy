@@ -2,6 +2,7 @@
 @import "./assets/styles/css/marginUtilities.scss";
 @import "./assets/styles/css/widthUtilities.scss";
 @import "./assets/styles/css/formUtilities.scss";
+@import "./assets/styles/css/overrides.scss";
 
 body{
   font-family: 'DM Sans', sans-serif;
@@ -25,31 +26,6 @@ h6 {
   width: 150px;
   height: 150px;
   vertical-align: middle;
-}
-
-.icons-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-  margin-right: 8px;
-}
-
-.icons-svg-sm {
-  width: 15px;
-  height: 15px;
-  vertical-align: middle;
-}
-
-.icon-svg-margin-top {
-  fill: "#ffffff";
-  margin-top: "10px";
-  margin-left: "5px";
-}
-
-svg path {
-  fill: "white";
-  stroke: "white";
-  stroke-width: "10";
 }
 
 .form-control:focus {

@@ -1,5 +1,3 @@
-import "../styles/css/svgStyles.css";
-
 export const DeveloperIcon = ({height="100%", width="100%"}: any) => {
 
     return (

@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import "./assets/styles/css/svgStyles.css";
 import './index.scss';
 import { myThemes } from './assets/themes/defaultThemes';
 

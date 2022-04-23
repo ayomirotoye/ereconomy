@@ -1,7 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import { hasKeys, isNullOrUndefined } from "../utils/helpers";
-const format = "HH:mm";
 function FormGroup({
     input_type, on_change, elRef, input_name, place_holder, input_id, input_key, error, is_readonly, input_value, label_value = "", div_classname, style, label_style = {}, clickable_label = {}, input_class_name = "", has_addon = {},
 }: any) {
@@ -102,38 +101,52 @@ function FormGroup({
             readOnly={is_readonly}
             style={style}
             value={input_value} />
-    ) 
-    // : inputGroupTime.indexOf(defineInputType(input_type)) > -1 ? (
+    )
+        // : inputGroupTime.indexOf(defineInputType(input_type)) > -1 ? (
         // <TimePicker
         //     className="w-100 form-control timepicker-style"
         //     defaultValue={moment("12:08", format)}
         //     format={format}
         //     onChange={(time: any, timeString: any) => on_change(moment().milliseconds(time).valueOf(), timeString)} />
-    // ) 
-    : inputGroupRange.indexOf(defineInputType(input_type)) > -1 ? (
-        <input
-            type={defineInputType(input_type)}
-            key={input_key}
-            id={input_id}
-            name={input_name}
-            className={inputClassName}
-            ref={elRef}
-            onChange={on_change ? on_change : null}
-            readOnly={is_readonly}
-            style={style} />
-    ) : defineInputType(input_type) === "password" ? (
-        on_change ? (
+        // ) 
+        : inputGroupRange.indexOf(defineInputType(input_type)) > -1 ? (
             <input
                 type={defineInputType(input_type)}
                 key={input_key}
                 id={input_id}
                 name={input_name}
                 className={inputClassName}
-                onChange={on_change ? on_change : null}
-                value={input_value}
                 ref={elRef}
-                readOnly={is_readonly ? is_readonly : false}
+                onChange={on_change ? on_change : null}
+                readOnly={is_readonly}
                 style={style} />
+        ) : defineInputType(input_type) === "password" ? (
+            on_change ? (
+                <input
+                    type={defineInputType(input_type)}
+                    key={input_key}
+                    id={input_id}
+                    name={input_name}
+                    className={inputClassName}
+                    onChange={on_change ? on_change : null}
+                    value={input_value}
+                    ref={elRef}
+                    readOnly={is_readonly ? is_readonly : false}
+                    style={style} />
+            ) : (
+                <input
+                    type={defineInputType(input_type)}
+                    key={input_key}
+                    id={input_id}
+                    name={input_name}
+                    className={inputClassName}
+                    onChange={on_change ? on_change : null}
+                    value={input_value}
+                    ref={elRef}
+                    defaultValue={""}
+                    readOnly={is_readonly ? is_readonly : false}
+                    style={style} />
+            )
         ) : (
             <input
                 type={defineInputType(input_type)}
@@ -143,26 +156,12 @@ function FormGroup({
                 className={inputClassName}
                 onChange={on_change ? on_change : null}
                 value={input_value}
-                ref={elRef}
                 defaultValue={""}
+                ref={elRef}
+                placeholder={place_holder}
                 readOnly={is_readonly ? is_readonly : false}
                 style={style} />
-        )
-    ) : (
-        <input
-            type={defineInputType(input_type)}
-            key={input_key}
-            id={input_id}
-            name={input_name}
-            className={inputClassName}
-            onChange={on_change ? on_change : null}
-            value={input_value}
-            defaultValue={""}
-            ref={elRef}
-            placeholder={place_holder}
-            readOnly={is_readonly ? is_readonly : false}
-            style={style} />
-    );
+        );
 
     return (
         <>

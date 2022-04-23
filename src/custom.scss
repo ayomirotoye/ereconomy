@@ -17,5 +17,7 @@ $custom-colors: (
   "secondary": #2e186a);
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+$enable-negative-margins: true;
 /* import bootstrap to set changes */
 @import '~bootstrap/scss/bootstrap.scss';

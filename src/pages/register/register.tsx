@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
+import { selector, useRecoilValue, useSetRecoilState } from "recoil";
 import { ResponsiveWidthWrapper } from "../../assets/styles/breakPointUtilities";
 import { OutlinedButton, StyledButton } from "../../assets/styles/common";
 import { StyledLink } from "../../assets/styles/styledUtilities";
 import CustomProgressBarWithBrand from "../../components/customProgressBarWithBrand";
 import FormGroup from "../../components/formGroup";
+import Label from "../../components/label";
 import TokenizedInput from "../../components/tokenizedInput";
+import { atomTokenInputState } from "../../state/atoms/formState/tokenInput";
+import { appendDataToTokenInput, removeFromInputData } from "../../state/selectors/tokenInputSelector";
 
 const totalStage = 4;
 const Register = () => {
+    const setTokenInputData = useSetRecoilState(appendDataToTokenInput);
+    const removeTokenInputData = useSetRecoilState(removeFromInputData);
+    const tokenInputValue = useRecoilValue(atomTokenInputState);
 
     const [values, setValues] = useState(Object.assign({}));
     const [myErrors] = useState(Object.assign({}));
@@ -28,11 +35,11 @@ const Register = () => {
     }, [stage]);
 
     return (
-        <Container className="h-100 my-5">
-            <ResponsiveWidthWrapper className="mx-auto">
+        <Container className="d-flex h-100">
+            <ResponsiveWidthWrapper className="mx-auto my-auto">
                 <CustomProgressBarWithBrand now={progress} title="Create your account" />
                 <form>
-                    {stage == 1 ? <><div className="row">
+                    {stage === 1 ? <><div className="row">
                         <div className="col-sm-12 col-md-12 mb-5">
                             <FormGroup
                                 input_name="email"
@@ -67,7 +74,7 @@ const Register = () => {
                             </div>
                         </div></> : []}
                     {/* 2ND SECTION */}
-                    {stage == 2 ? <>  <div className="row">
+                    {stage === 2 ? <>  <div className="row">
                         <div className="col-sm-12 col-md-12 mb-3">
                             <FormGroup
                                 input_name="firstName"
@@ -119,7 +126,7 @@ const Register = () => {
                             </div>
                         </div> </> : []}
                     {/* 3RD SECTION */}
-                    {stage == 3 ? <><div className="row">
+                    {stage === 3 ? <><div className="row">
                         <div className="col-sm-12 col-md-12 mb-3">
                             <FormGroup
                                 input_name="phoneNumber"
@@ -171,16 +178,22 @@ const Register = () => {
                             </div>
                         </div></> : []}
                     {/* 3RD SECTION */}
-                    {stage == totalStage ? <><div className="row">
+                    {stage === totalStage ? <><div className="row">
                         <div>
-                            <TokenizedInput />
+                            <Label className="mx-3 my-3" text="Token"/>
+                            <TokenizedInput
+                                onType={(val: any) => setTokenInputData(val)}
+                                value={tokenInputValue}
+                                name={"token"}
+                                onDelete={(index: any) => removeTokenInputData(index)}
+                            />
                         </div>
                     </div></> : []}
 
 
                 </form>
                 <div className="d-flex justify-content-between align-items-center">
-                    {stage == 1 ? <div className="">
+                    {stage === 1 ? <div className="">
                         <StyledLink to="/">Have an account ? Login</StyledLink>
                     </div> : <OutlinedButton
                         width="25%"

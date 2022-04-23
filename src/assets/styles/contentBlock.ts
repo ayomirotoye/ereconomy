@@ -32,6 +32,15 @@ export const ContentWrapper = styled("div")`
   }
 `;
 
+export const MainContentContainer = styled.div`
+ width: "80vw" !important;
+`;
+
+export const DashboardWrapper= styled.div`
+width: "100vw";
+background-color: ${(p) => (p.color ?? p.theme.lightMode.primaryColor)} !important;
+`;
+
 export const ButtonWrapper = styled("div")`
   display: flex;
   justify-content: space-between;

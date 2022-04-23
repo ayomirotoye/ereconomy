@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { atomTokenInputState } from "../state/atoms/formState/tokenInput";
 import { isNullOrUndefined, isNumeric } from "../utils/helpers";
 
@@ -15,8 +15,8 @@ const TokenizedInput = ({ inputLength = 6,
     onType,
     onDelete,
     tokenType = "number",
-    name = "token" }: any) => {
-    const [tokenInputData, setTokenInputData] = useRecoilState(atomTokenInputState);
+    name = "token"}: any) => {
+    const tokenInputData = useRecoilValue(atomTokenInputState);
 
     const refs = useMemo(() => initArray(inputLength).map((_val, _i: any) => {
         return React.createRef<HTMLInputElement>();
@@ -43,9 +43,9 @@ const TokenizedInput = ({ inputLength = 6,
             if (e.key === 'Delete' || e.key === 'Backspace') {
                 e.target.value = "";
                 if (index > 0) {
-                    refs[index - 1].current?.focus();
-                } else {
                     refs[index].current?.focus();
+                } else {
+                    refs[0].current?.focus();
                 }
                 onDelete(index);
             }
@@ -96,7 +96,7 @@ const TokenizedInput = ({ inputLength = 6,
     }, [tokenInputData]);
 
     return (
-        <div className="flex justify-content-between">
+        <div className="d-flex justify-content-center align-self-center mb-3">
             {accDigitJsxElements}
         </div>
     )

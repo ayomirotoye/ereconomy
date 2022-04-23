@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 import { useRecoilState } from "recoil";
-import { CloseIcon } from "../../assets/icons/CloseIcon";
 import { ResponsiveWidthWrapper } from "../../assets/styles/breakPointUtilities";
 import { StyledButton } from "../../assets/styles/common";
 import { Content } from "../../assets/styles/contentBlock";
 import { StyledLink } from "../../assets/styles/styledUtilities";
 import CloseableContainer from "../../containers/closeableContainer";
+import { callUserLoginApi } from "../../services/authService";
 import { atomLoginModalState } from "../../state/atoms/modalState";
+import { responseCodes } from "../../static/constants";
+import { appNavigationLinks } from "../../utils/appNavigationLinks";
 import { validateLoginInput } from "../../utils/formUtils";
-import Brand from "../brand";
+import { isSuccessful } from "../../utils/helpers";
 import CustomProgressBarWithBrand from "../customProgressBarWithBrand";
 import FormGroup from "../formGroup";
 
-const LoginModal = ({ header_value }: any) => {
+const LoginModal = () => {
   const [loginModalState, setLoginModalState] = useRecoilState(atomLoginModalState);
+  const [isSubmitting, setIsSubmitting] = useState(true);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [values, setValues] = useState(Object.assign({}));
 
@@ -27,25 +31,25 @@ const LoginModal = ({ header_value }: any) => {
 
   const [myErrors, setMyErrors] = useState(Object.assign({}));
 
-  // const handleAuth = async () => {
-  //   setIsSubmitting(true);
-  //   try {
-  //     let res = await callUserLoginApi(values);
-  //     if (isSuccessful(res?.responseCode)) {
-  //       toast("Wow so easy !");
-  //     } else if (res?.responseCode === responseCodes.INACTIVE_USER) {
-  //       navigate(appNavigationLinks.dashboard);
-  //     }
-  //     else {
-  //       toast("Failed");
-  //       closeAuthModal();
-  //       navigate(appNavigationLinks.dashboard);
-  //     }
-  //   } catch (err) {
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
+  const handleLogin = async () => {
+    setIsSubmitting(true);
+    try {
+      let res = await callUserLoginApi(values);
+      if (isSuccessful(res?.responseCode)) {
+        toast("Wow so easy !");
+      } else if (res?.responseCode === responseCodes.INACTIVE_USER) {
+        navigate(appNavigationLinks.dashboard);
+      }
+      else {
+        toast("Failed");
+        closeAuthModal();
+        navigate(appNavigationLinks.dashboard);
+      }
+    } catch (err) {
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleInputChange = (e: any) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -124,9 +128,7 @@ const LoginModal = ({ header_value }: any) => {
                 </div>
                 <StyledButton
                   width="50%"
-                  onClick={(e: any) => {
-
-                  }}
+                  onClick={handleLogin}
                 >
                   Login
                 </StyledButton>

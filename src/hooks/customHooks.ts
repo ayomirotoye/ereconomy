@@ -20,8 +20,14 @@ export default function useToken() {
   }
 
 }
+
+const handleSmallScreenChange = (matches: boolean) => {
+  return matches;
+}
+
 export const useMediaQueryWrapper = () => {
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 576px)" });
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 576 }, undefined, handleSmallScreenChange);
   const isMediumScreen = useMediaQuery({ query: `(max-width: 768px)` });
   const isLargeScreen = useMediaQuery({ query: "(min-device-width: 992px)" });
   const isExtraLargeScreen = useMediaQuery({ query: "(min-device-width: 1200px)" });
@@ -29,7 +35,8 @@ export const useMediaQueryWrapper = () => {
 
   return {
     isLargeScreen,
-    isSmallScreen, isMediumScreen,
+    isSmallScreen, 
+    isMediumScreen,
     isExtraLargeScreen,
     isExtraExtraLargeScreen
   };

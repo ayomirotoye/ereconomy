@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { useTheme } from "styled-components";
 import { ArrowRightIcon } from "../assets/icons/ArrowRightIcon";
-import { InfoCardImage, InfoCardText, InfoCardTitle, StyledCard } from "../assets/styles/infoCard";
+import { InfoCardImage, InfoCardText, InfoCardTitle, StyledCard } from "../assets/styles/appCard";
 import { getFieldFromObj } from "../utils/helpers";
 
 export const InfoCard = ({ title, text, image }: any) => {

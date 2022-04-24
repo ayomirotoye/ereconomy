@@ -28,3 +28,10 @@ min-height: 200px;
 export const InfoCardImage = styled.div`
 max-height: 100px !important;
 `
+export const CardWithStyledBackground = styled(Card)`
+margin: 0 auto;
+margin-bottom: 0px;
+border-radius: 20px;
+background-color: ${props => props.color};
+height:200px !important;
+`;

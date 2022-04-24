@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/ereconomy/static/css/main.81018a4e.css",
-    "main.js": "/ereconomy/static/js/main.3b5887a1.js",
-    "static/js/555.089ae9e6.chunk.js": "/ereconomy/static/js/555.089ae9e6.chunk.js",
+    "main.js": "/ereconomy/static/js/main.6c1a8e6a.js",
+    "static/js/220.8fb43c57.chunk.js": "/ereconomy/static/js/220.8fb43c57.chunk.js",
     "static/js/270.d21037df.chunk.js": "/ereconomy/static/js/270.d21037df.chunk.js",
-    "static/js/935.4f4d2725.chunk.js": "/ereconomy/static/js/935.4f4d2725.chunk.js",
+    "static/js/630.a166c9c7.chunk.js": "/ereconomy/static/js/630.a166c9c7.chunk.js",
     "static/js/787.c35f7a78.chunk.js": "/ereconomy/static/js/787.c35f7a78.chunk.js",
-    "static/js/736.f7accf90.chunk.js": "/ereconomy/static/js/736.f7accf90.chunk.js",
-    "static/js/692.b79c41f0.chunk.js": "/ereconomy/static/js/692.b79c41f0.chunk.js",
+    "static/js/739.938d7f65.chunk.js": "/ereconomy/static/js/739.938d7f65.chunk.js",
+    "static/js/380.b15ae8e9.chunk.js": "/ereconomy/static/js/380.b15ae8e9.chunk.js",
     "static/js/404.0fe0ba4e.chunk.js": "/ereconomy/static/js/404.0fe0ba4e.chunk.js",
-    "static/js/27.481e35f4.chunk.js": "/ereconomy/static/js/27.481e35f4.chunk.js",
-    "static/js/841.9af17caa.chunk.js": "/ereconomy/static/js/841.9af17caa.chunk.js",
+    "static/js/27.539b4be2.chunk.js": "/ereconomy/static/js/27.539b4be2.chunk.js",
+    "static/js/85.fdf5b5c6.chunk.js": "/ereconomy/static/js/85.fdf5b5c6.chunk.js",
     "index.html": "/ereconomy/index.html",
     "main.81018a4e.css.map": "/ereconomy/static/css/main.81018a4e.css.map",
-    "main.3b5887a1.js.map": "/ereconomy/static/js/main.3b5887a1.js.map",
-    "555.089ae9e6.chunk.js.map": "/ereconomy/static/js/555.089ae9e6.chunk.js.map",
+    "main.6c1a8e6a.js.map": "/ereconomy/static/js/main.6c1a8e6a.js.map",
+    "220.8fb43c57.chunk.js.map": "/ereconomy/static/js/220.8fb43c57.chunk.js.map",
     "270.d21037df.chunk.js.map": "/ereconomy/static/js/270.d21037df.chunk.js.map",
-    "935.4f4d2725.chunk.js.map": "/ereconomy/static/js/935.4f4d2725.chunk.js.map",
+    "630.a166c9c7.chunk.js.map": "/ereconomy/static/js/630.a166c9c7.chunk.js.map",
     "787.c35f7a78.chunk.js.map": "/ereconomy/static/js/787.c35f7a78.chunk.js.map",
-    "736.f7accf90.chunk.js.map": "/ereconomy/static/js/736.f7accf90.chunk.js.map",
-    "692.b79c41f0.chunk.js.map": "/ereconomy/static/js/692.b79c41f0.chunk.js.map",
+    "739.938d7f65.chunk.js.map": "/ereconomy/static/js/739.938d7f65.chunk.js.map",
+    "380.b15ae8e9.chunk.js.map": "/ereconomy/static/js/380.b15ae8e9.chunk.js.map",
     "404.0fe0ba4e.chunk.js.map": "/ereconomy/static/js/404.0fe0ba4e.chunk.js.map",
-    "27.481e35f4.chunk.js.map": "/ereconomy/static/js/27.481e35f4.chunk.js.map",
-    "841.9af17caa.chunk.js.map": "/ereconomy/static/js/841.9af17caa.chunk.js.map"
+    "27.539b4be2.chunk.js.map": "/ereconomy/static/js/27.539b4be2.chunk.js.map",
+    "85.fdf5b5c6.chunk.js.map": "/ereconomy/static/js/85.fdf5b5c6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.81018a4e.css",
-    "static/js/main.3b5887a1.js"
+    "static/js/main.6c1a8e6a.js"
   ]
 }

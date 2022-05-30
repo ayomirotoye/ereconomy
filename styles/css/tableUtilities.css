@@ -1,0 +1,9 @@
+.table td {
+    padding: 20px !important;
+}
+.table{
+    border-radius: 25px;
+}
+.table .titleTd{
+    font-weight: 900;
+}

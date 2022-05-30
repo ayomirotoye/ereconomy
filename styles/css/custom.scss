@@ -1,0 +1,29 @@
+/* The following block can be included in a custom.scss */
+
+/* make the customizations */
+/* === Import Bootstrap functions and variables === */
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+
+:root {
+  --primary-color: #49926A;
+  --secondary-color: #2e186a;
+  --accent-color: #fe7624
+}
+
+$custom-colors: ("primary": #49926A,
+  "secondary": #2e186a);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$spacer: 1rem;
+$spacers: (0:0);
+
+@for $i from 1 through 100 {
+  $spacers: map-merge($spacers, ($i: ($i * $spacer)));
+}
+
+$enable-negative-margins: true;
+/* import bootstrap to set changes */
+@import '~bootstrap/scss/bootstrap.scss';

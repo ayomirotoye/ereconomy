@@ -1,0 +1,23 @@
+{
+  "title": "Don't just earn to save. Save to earn",
+  "text": "You get rewarded for saving your money. No stories or hidden charges ",
+  "button": [
+    {
+      "title": "Start saving",
+      "icon":"delivery-man.svg",
+      "className":"icons-svg",
+      "iconClass":"primary",
+      "svgIcon":"DELIVERY_MAN",
+      "textColor":""
+    },
+    {
+      "title": "Explore ",
+      "color": "#fff",
+      "icon":"delivery-man.svg",
+      "className":"icons-svg",
+      "iconClass":"primary",
+      "svgIcon":"EXPLORE",
+      "textColor":"primaryColor"
+    }
+  ]
+}
